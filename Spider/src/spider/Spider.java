@@ -42,7 +42,6 @@ public class Spider extends JavaPlugin{
 		Bukkit.getPluginManager().registerEvents(new PlayerMove(), this);
 		Bukkit.getPluginManager().registerEvents(new EntityDamageByEntity(), this);
 		Bukkit.getPluginManager().registerEvents(new NoFall(), this);
-		Bukkit.broadcastMessage("test") ;
 	}
 	
 	public void onDisable(){
