@@ -5,7 +5,10 @@ import org.inventivetalent.packetlistener.handler.PacketHandler;
 import org.inventivetalent.packetlistener.handler.ReceivedPacket;
 import org.inventivetalent.packetlistener.handler.SentPacket;
 
+import net.minecraft.server.v1_8_R3.PacketPlayInArmAnimation;
+import net.minecraft.server.v1_8_R3.PacketPlayInBlockDig;
 import spider.Spider;
+import spider.SpiderPlayer;
 
 public class EcoutePackets {
 	
@@ -21,9 +24,16 @@ public class EcoutePackets {
 
             @Override
             public void onReceive(ReceivedPacket e) {
-            	/*if(e.getPlayer() == null)return ;
+            	if(e.getPlayer() == null)return ;
 				SpiderPlayer sp = Spider.get(e.getPlayer()) ;
 				if(sp == null) return ;
+            	if(e.getPacket() instanceof PacketPlayInArmAnimation){
+    				sp.armAnimationPacket++ ;
+            	}
+            	if(e.getPacket() instanceof PacketPlayInBlockDig){
+            		sp.nuker++ ;
+            	}
+            	/*
             	if(e.getPacket() instanceof PacketPlayInFlying){
     				sp.flyingPacket++ ;
             	}
@@ -36,14 +46,8 @@ public class EcoutePackets {
             	if(e.getPacket() instanceof PacketPlayInLook){
     				sp.lookPacket++ ;
             	}
-            	if(e.getPacket() instanceof PacketPlayInArmAnimation){
-    				sp.armAnimationPacket++ ;
-            	}
             	if(e.getPacket() instanceof PacketPlayInAbilities){
     				sp.abilitiesPacket++ ;
-            	}
-            	if(e.getPacket() instanceof PacketPlayInBlockDig){
-            		sp.nuker++ ;
             	}
             	if(e.getPacket() instanceof PacketPlayInCloseWindow){
             		sp.closeWindow++ ;

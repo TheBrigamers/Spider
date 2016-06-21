@@ -45,6 +45,11 @@ public class CheckCheat {
 							pourcentage = sp.armAnimationPacket*14 ;
 							sp.autoClickViolation++ ;
 							CheatType.AUTOCLICK.alert(sp.getPlayer(),pourcentage,sp.autoClickViolation);
+						}else
+						if(sp.nuker > 50){
+							pourcentage = sp.nuker* 24 ;
+							sp.nukerViolation++ ;
+							CheatType.NUKER.alert(sp.getPlayer(), pourcentage, sp.nukerViolation);
 						}
 					
 					sp.flyingPacket = 0 ;
