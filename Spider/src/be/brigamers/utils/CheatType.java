@@ -15,11 +15,14 @@ public enum CheatType {
 	FLY("Fly","Fly"),
 	FLYVANILLA("Fly-Vanilla", "FlyVanilla"),
 	FORCEFIELD("Forcefield","Forcefield"),
+	GLIDE("Glide","Glide"),
 	HIGH_JUMP("High-Jump","HighJump"),
 	JESUS("Jesus","Jesus"),
 	KNOCKBACK("Anti-Knockback","AntiKnockback"),
 	NO_FALL("No-Fall","NoFall"),
+	NO_WEB("No-Web","NoWeb"),
 	NUKER("Nuker","Nuker"),
+	SNEAK("Sneak","Sneak"),
 	SPEEDHACK("Speed-Hack","SpeedHack"),
 	REGEN("Regen","Regen");
 	
@@ -38,25 +41,10 @@ public enum CheatType {
 		return permission ;
 	}
 	
-	public void alert(Player p, int pourcentage, int violation){
+	public void alert(Player p){
 		String playerName = p.getName() ;
-		String msg ;
-		if(pourcentage == 0){
-			msg = "§6[§b§lSpider§6] §c" + playerName + "§6: §c" + name + "§6 (Violation: §c" + violation + "§6)." ;
-		}else{
-			msg = "§6[§b§lSpider§6] §c" + playerName + "§6: §c" + name + "§6 (Intensité: §c" + pourcentage + "%§6, Violation: §c" + violation + "§6)."  ;
-		}
-		for(Player pOnline : Bukkit.getOnlinePlayers()){
-			if(pOnline.hasPermission("spider.alert")){
-				pOnline.sendMessage(msg);
-			}
-		}
-	}
-	
-	public void kick(Player p){
-		String msg ;
-		msg = "§6[§b§lSpider§6] §c" + p.getName() + "§6: §c" + name + "§6 (Kick pour 20 violations)." ;
-		p.kickPlayer("§6[§b§lSpider§6] §cvous§6 avez été kick pour §c" + name + "§6 (20 violations).");
+		String msg = "§6[§b§lSpider§6] §c" + playerName + "§6: §c" + name + "§6."  ;
+
 		for(Player pOnline : Bukkit.getOnlinePlayers()){
 			if(pOnline.hasPermission("spider.alert")){
 				pOnline.sendMessage(msg);

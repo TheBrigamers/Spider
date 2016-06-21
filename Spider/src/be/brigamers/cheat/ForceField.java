@@ -4,9 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-import spider.Spider;
-import spider.SpiderPlayer;
-
 public class ForceField {
 
 	public ForceField(Player p){
@@ -29,8 +26,7 @@ public class ForceField {
 		}
 		
 		if(trouvé == false){
-			SpiderPlayer sp = Spider.get(p) ;
-			sp.forcefield++ ;
+			// Detection
 		}
 	}
 	

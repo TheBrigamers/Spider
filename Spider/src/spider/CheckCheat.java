@@ -14,63 +14,54 @@ public class CheckCheat {
 				
 				for(SpiderPlayer sp : Spider.getSpiderPlayer()){
 					
-					int pourcentage = 0;
-					
-					//V2
-					
+					//Check
 					
 						if(sp.critials > 1){
-							sp.critialsViolation++ ;
-							CheatType.CRITIALS.alert(sp.getPlayer(), 0, sp.critialsViolation);
+							CheatType.CRITIALS.alert(sp.getPlayer());
 						}else
 						if(sp.noFall > 5){
-							sp.noFallViolation++ ;
-							CheatType.NO_FALL.alert(sp.getPlayer(),sp.noFall*50,sp.noFallViolation);
+							CheatType.NO_FALL.alert(sp.getPlayer());
 						}else
 						if(sp.jesus > 9){
-							sp.jesusViolation++ ;
-							CheatType.JESUS.alert(sp.getPlayer(),0,sp.jesusViolation);
+							CheatType.JESUS.alert(sp.getPlayer());
 						}else
 						if(sp.NaturalRegen > 4){
-							pourcentage = sp.NaturalRegen*50 ;
-							sp.regenViolation++ ;
-							CheatType.REGEN.alert(sp.getPlayer(),pourcentage,sp.regenViolation);
+							CheatType.REGEN.alert(sp.getPlayer());
 						}else
 						if(sp.projectile > 3){
-							pourcentage = sp.projectile*50 ;
-							sp.fastBowViolation++ ;
-							CheatType.FAST_BOW.alert(sp.getPlayer(),pourcentage,sp.fastBowViolation);
+							CheatType.FAST_BOW.alert(sp.getPlayer());
 						}else
-						if(sp.armAnimationPacket > 30){
-							pourcentage = sp.armAnimationPacket*14 ;
-							sp.autoClickViolation++ ;
-							CheatType.AUTOCLICK.alert(sp.getPlayer(),pourcentage,sp.autoClickViolation);
+						if(sp.armAnimationPacket > 30){;
+							CheatType.AUTOCLICK.alert(sp.getPlayer());
 						}else
 						if(sp.nuker > 50){
-							pourcentage = sp.nuker* 24 ;
-							sp.nukerViolation++ ;
-							CheatType.NUKER.alert(sp.getPlayer(), pourcentage, sp.nukerViolation);
+							CheatType.NUKER.alert(sp.getPlayer());
+						}else
+						if(sp.noWeb > 2){
+							CheatType.NO_WEB.alert(sp.getPlayer());
+						}else
+						if(sp.sneak > 10){
+							CheatType.SNEAK.alert(sp.getPlayer());
+						}else
+						if(sp.fly > 3){
+							CheatType.FLY.alert(sp.getPlayer());
+						}else
+						if(sp.glide > 3){
+							CheatType.GLIDE.alert(sp.getPlayer());
 						}
-					
-					sp.flyingPacket = 0 ;
-					sp.positionLookPacket = 0 ;
-					sp.positionPacket = 0 ;
-					sp.lookPacket = 0 ;
+						
 					sp.armAnimationPacket = 0 ;
 					sp.NaturalRegen = 0 ;
 					sp.projectile = 0 ;
-					sp.abilitiesPacket = 0 ;
 					sp.jesus = 0 ;
-					sp.forcefield = 0 ;
-					sp.highJump = 0 ;
-					sp.fly = 0 ;
 					sp.speedHack = 0 ;
 					sp.nuker = 0 ;
 					sp.critials = 0 ;
-					sp.closeWindow = 0 ;
-					sp.chat = 0 ;
-					sp.windowClick = 0 ;
 					sp.noFall = 0 ;
+					sp.noWeb = 0 ;
+					sp.sneak = 0 ;
+					sp.fly = 0 ;
+					sp.glide = 0;
 				}
 					
 				
