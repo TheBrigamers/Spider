@@ -22,6 +22,7 @@ public class SpiderPlayer {
 	public int sneak = 0 ;
 	public int fly = 0;
 	public int glide = 0;
+	public int knockback = 0;
 	
 	public SpiderPlayer(Player player){
 		this.player = player ;

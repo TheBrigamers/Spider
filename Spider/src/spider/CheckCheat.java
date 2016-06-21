@@ -48,6 +48,9 @@ public class CheckCheat {
 						}else
 						if(sp.glide > 3){
 							CheatType.GLIDE.alert(sp.getPlayer());
+						}else
+						if(sp.knockback > 1){
+							CheatType.KNOCKBACK.alert(sp.getPlayer()) ;
 						}
 						
 					sp.armAnimationPacket = 0 ;
@@ -62,6 +65,7 @@ public class CheckCheat {
 					sp.sneak = 0 ;
 					sp.fly = 0 ;
 					sp.glide = 0;
+					sp.knockback = 0 ;
 				}
 					
 				
