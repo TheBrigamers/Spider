@@ -12,6 +12,7 @@ public class Jesus {
 	public Jesus(Player p){
 		Material sw = Material.STATIONARY_WATER ;
 		Material w = Material.WATER ;
+		if(p.isFlying()) return ;
 		if(p.getVehicle() instanceof Boat) return ;
 		if(p.getLocation().add(0,-1,0).getBlock().getType() == sw
 				|| p.getLocation().add(0,-1,0).getBlock().getType() == w){
