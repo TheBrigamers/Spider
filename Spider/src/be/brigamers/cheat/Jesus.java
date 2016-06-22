@@ -1,5 +1,6 @@
 package be.brigamers.cheat;
 
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Boat;
 import org.bukkit.entity.Player;
@@ -13,6 +14,7 @@ public class Jesus {
 		Material sw = Material.STATIONARY_WATER ;
 		Material w = Material.WATER ;
 		if(p.isFlying()) return ;
+		if(p.getGameMode() == GameMode.CREATIVE || p.getGameMode() == GameMode.SPECTATOR) return ;
 		if(p.getVehicle() instanceof Boat) return ;
 		if(p.getLocation().add(0,-1,0).getBlock().getType() == sw
 				|| p.getLocation().add(0,-1,0).getBlock().getType() == w){

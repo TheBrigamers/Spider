@@ -8,6 +8,7 @@ public enum CheatType {
 	AIMBOT("Aimbot","Aimbot"),
 	ANTIPOTION("Anti-Potion","AntiPotion"),
 	AUTOCLICK("AutoClick","AutoClick"),
+	CHEAT("Cheat","Cheat"),
 	CRITIALS("Criticals", "Criticals"),
 	FAST_BOW("Fast-Bow","FastBow"),
 	FAST_FOOD("Fast-Food","FastFood"),

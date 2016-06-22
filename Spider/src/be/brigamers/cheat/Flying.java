@@ -58,7 +58,6 @@ public class Flying {
 	 
 	            if (!p.isOnGround()) {
 	            	if (b1.getType() != Material.AIR || b2.getType() != Material.AIR || b3.getType() != Material.AIR || b4.getType() != Material.AIR || downBlock.getType().toString().contains("FENCE") || downBlock.toString().contains("WALL")) {
-	            		p.teleport(p.getLocation(e.getFrom())); 
 	            		return true ;
 	    	        }
 	            }
@@ -83,7 +82,6 @@ public class Flying {
 	            if (e.getTo().getBlockY() > e.getFrom().getBlockY()) {
 	     
 	                if (i > 0.58) {
-	                    p.teleport(p.getLocation(e.getFrom()));
 	                   return true ;
 	                }
 	            }

@@ -8,8 +8,11 @@ public class SpiderPlayer {
 	private Player player ;
 	private Location lastLocation ;
 	
+	public int nbPacket = 0 ;
 	public int deplaceBlock = 0 ;
+	public int jumping = 0 ;
 	
+	public int nbCheatDetect = 0 ;
 	public int armAnimationPacket = 0 ;
 	public int NaturalRegen = 0 ;
 	public int projectile = 0 ;

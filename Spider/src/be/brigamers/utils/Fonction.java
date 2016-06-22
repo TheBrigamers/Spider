@@ -1,5 +1,6 @@
 package be.brigamers.utils;
 
+import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -43,6 +44,13 @@ public class Fonction {
 			return true ;
 		}
 		return false;
+	}
+	
+	public boolean hasMoved(Player p, Location from, Location to){
+		if(from.getX() != to.getX()) return true ;
+		if(from.getY() != to.getY()) return true ;
+		if(from.getZ() != to.getZ()) return true ;
+		return false ;
 	}
 	
 }
