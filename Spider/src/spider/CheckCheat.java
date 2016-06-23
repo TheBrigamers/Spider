@@ -13,7 +13,6 @@ public class CheckCheat {
 			public void run() {
 				
 				for(SpiderPlayer sp : Spider.getSpiderPlayer()){
-					Bukkit.broadcastMessage(sp.armAnimationPacket + "") ;
 					sp.nbPacket = 0 ;
 					boolean isCheating = false ;
 					//Check
@@ -64,7 +63,12 @@ public class CheckCheat {
 						if(sp.fly > 1){
 							isCheating = true ;
 							CheatType.CHEAT.alert(sp.getPlayer());
+						}else
+						if(sp.timer > 100){
+							isCheating = true ;
+							CheatType.TIMER.alert(sp.getPlayer());
 						}
+						
 						if(isCheating){
 							sp.nbCheatDetect++ ;
 							if(sp.nbCheatDetect >= 3){
@@ -86,6 +90,7 @@ public class CheckCheat {
 					sp.fly = 0 ;
 					sp.glide = 0;
 					sp.knockback = 0 ;
+					sp.timer = 0 ;
 				}
 					
 				

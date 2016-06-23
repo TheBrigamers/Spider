@@ -22,10 +22,11 @@ public enum CheatType {
 	KNOCKBACK("Anti-Knockback","AntiKnockback"),
 	NO_FALL("No-Fall","NoFall"),
 	NO_WEB("No-Web","NoWeb"),
+	REGEN("Regen","Regen"),
 	NUKER("Nuker","Nuker"),
 	SNEAK("Sneak","Sneak"),
 	SPEEDHACK("Speed-Hack","SpeedHack"),
-	REGEN("Regen","Regen");
+	TIMER("Timer", "Timer");
 	
 	private String name, permission;
 	
