@@ -1,6 +1,7 @@
 package spider;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 public class SpiderPlayer {
@@ -11,6 +12,9 @@ public class SpiderPlayer {
 	public int nbPacket = 0 ;
 	public int deplaceBlock = 0 ;
 	public int jumping = 0 ;
+	public int prendDegats = 0;
+	public int feedNbItemInHand = 0 ;
+	public Material feedLastMaterialInHand = null ;
 	
 	public int nbCheatDetect = 0 ;
 	public int armAnimationPacket = 0 ;
@@ -27,6 +31,12 @@ public class SpiderPlayer {
 	public int glide = 0;
 	public int knockback = 0;
 	public int timer = 0;
+	public int positionLook = 0;
+	public int antiCactus = 0;
+	public int dolphine = 0;
+	public int autoSteal = 0;
+	public int fastEat = 0;
+	public int join;
 	
 	public SpiderPlayer(Player player){
 		this.player = player ;

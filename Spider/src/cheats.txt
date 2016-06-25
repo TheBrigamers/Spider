@@ -1,0 +1,133 @@
+Code :
+	
+	D : Detecter
+	G : Graphique
+	I : Inutile
+	B : Bloquer
+
+Monde :
+
+	D CivBreak : Casse les block instant
+	D ClickNuker : Fait un nuker lors du click
+	D Nuker : creuse un certain nombre de block autour de nous de maniere instantanée
+	G PathFinder : defini le tracé pour allez a un point donné
+	I SignCrash : Crash le client si il clique sur un panneau
+	D Timer : accelere la vitesse du jeu
+	
+Joueur :
+
+	D AutoSteal : prend automatiquement le contenu d'un coffre
+	AutoHeat : Mange automatiquement
+	Enhance : ?
+	FastBreak : Permet de casser plus vite les block
+	D FastEat: Permet de manger plus vite
+	FastPlace : Permet de poser de blocks plus vite
+	Freecam : Permet de ce déplacer invincible, en fly et en gm3 dans la limite des chunk chargé
+	Ghost : Permet de casser des block a travers le mur
+	invWalk : Permet d'ouvrir son inventaire en marchant
+	MoreInventory : Empeche le drop des item dans les slots de craf
+	NoBlind/AntiBlind : empeche l'effect Cécité
+	NoBreakDelay : Casse les block plus vite (Créatif seulement)
+	D Regen : Regenere la vie plus vite et permet de manger plus vite
+	D Zoot : Anule les effect négatif
+	D AntiCactus : Permet de ne pas subir de dégats par les cactus
+	
+Combat :
+
+	AimAssist : petite assistance au visée
+	Aimbot : visé automatique vers le mob/joueur le plus proche
+	AutoArmor :  Equipe automatiquement l'armure la plus forte de votre inventaire
+	AutoAttack : Tape le mob/joueur des que celui ci est visé
+	AutoShoot : Tire automatiquement sur le joueur/mob des que celui ci est visé
+	AutoSoup : Mange une soupe automatiquement si la vie est basse
+	AutoSword : Prend une épé automatiquement si vous tapez
+	BowAimbat : Verouille automatiquement sur une cible
+	ClickAimbot : Verouille automatiquement sur la cible la plus proche
+	ClickAura : (ForceField)
+	D Criticals : Donne des coups critique automatiquement sans sauter
+	FastBow : Tire les fleches beaucoup plus vite
+	FightBot : Attaque 100 % automatiquement les enemies
+	ForceField : Touche les mob/joueurs dans un rayon tout autour du joueur
+	KillAura : (ForceField)
+	Reach : Permet de taper de plus loins
+	Velocity : Annule tout effect de vélocité
+	
+Rendu graphique :
+	
+	ArrowTrajectorie : Affiche la trajectoire des fleches
+	AntiHurtCam : ?
+	ArmorESP : Permet de voir les infos de l'armure d'un joueur
+	Breadcrumbs : ?
+	CaveFinder : Affiche les grottes : ?
+	CameraNoClip : ?
+	ChestESP : Permet de voir les coffres a travers les blocks
+	CompassTracer : ?
+	FarmhuntESP : ?
+	FullBright : permet de voir tout le temps comme en plein jour (= gamma amélioré)
+	ItemESP : Permet de voir les items a travers les blocks 
+	ItemLabel : Affiche un label au desus des item (nom + quentitié)
+	MobESP : permet de voir les mobs a travers les murs 
+	Nametags : Affiche les pseudo en grand
+	NoFireWork : N'affiche pas les particules de feu d'artifice
+	NoOverley : masque les effect de feu / eau
+	PlayerESP : Permet de voir les joueurs a travers les blocks
+	PotionEffect : Affiche les effect de potion en haut  a droite de l'ecran
+	Projectils : Affiche a l'avance la trajectoire de la fleche
+	Propunt : ?
+	B Tracer : affiche une ligne entre vous et les joueurs
+	TrueSight : ?
+	WallHack : Permet de voir les entité a travers le mur
+	XRay : Affiche les minerais
+	
+Mouvement :
+	
+	AirMove : Permet de bouger dans l'air comme si c'était un block solide
+	AirWalk : ?
+	Blink : Trace une ligne sur votre tracé
+	BunnyHop: Jump automatiquement quand vous sprinter
+	D CreativeFly : Permet de fly comme en créatif
+	Dolphin : ce déplace plus vite dans l'eau 
+	FastFall : Chute plus vite + NoFall
+	FastLadder : Monte plus vite les échelles
+	D Flight : Permet de fly
+	Flip
+	D FlyNpc : Permet de rester 1 block au dessus du sol en fly
+	D FlyVanilla : (CreativeFly)
+	D Glide : permet de desendre tres doucement quand on saute
+	D GlideFly : Identique au Glide, mais permet de rester en l'air
+	D HighJump: Permet de sauter de 3 blocks de haut
+	D Jesus : Permet de se déplacer sur l'eau comme sur un block
+	D NoFall : ne pas prendre de dégats de chute
+	D NoSlowDown : Marcher normalement dans les toiles d'araigner
+	ParkourJump : Saute automatiquement quand on approche du bord
+	Phases : Permet de s'enfoncer dans le sol
+	SafeWalk : Permet de rester sur le bord d'un block (comme le sneak)
+	SilentSneak : ?
+	D Sneak : Se déplacer en sneak a la vitesse normal
+	D Spider : Permet de se déplacer sur les murs
+	Speed : Permet de se déplacer plus vite
+	Sprint : Sprint autotiquement
+	SprintLegit : Sprint automatiquement
+	D Step : Permet de sauter un certain nombre de block
+	StepLegit : Saute au contacte d'un block
+	AntiAfk : Permet de ne pas être déconnecter pour inactivité
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

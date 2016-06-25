@@ -8,8 +8,12 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import be.brigamers.cheat.NoFall;
+import be.brigamers.events.EntityDamageByBlock;
 import be.brigamers.events.EntityDamageByEntity;
 import be.brigamers.events.EntityRegainHealth;
+import be.brigamers.events.InventoryOpen;
+import be.brigamers.events.PlayerFeed;
+import be.brigamers.events.PlayerJoin;
 import be.brigamers.events.PlayerMove;
 import be.brigamers.events.PlayerVelocity;
 import be.brigamers.events.projectileLaunch;
@@ -31,6 +35,7 @@ public class Spider extends JavaPlugin{
 		new EcoutePackets(this);
 		new CheckCheat(this) ;
 		new sendAllPackets(this);
+		new Timer() ;
 		getCommand("ban").setExecutor(new BanCommand());
 		getCommand("kick").setExecutor(new kickCommand());
 		getCommand("mute").setExecutor(new muteCommand());
@@ -42,6 +47,10 @@ public class Spider extends JavaPlugin{
 		Bukkit.getPluginManager().registerEvents(new EntityDamageByEntity(), this);
 		Bukkit.getPluginManager().registerEvents(new NoFall(), this);
 		Bukkit.getPluginManager().registerEvents(new PlayerVelocity(), this);
+		Bukkit.getPluginManager().registerEvents(new EntityDamageByBlock(), this);
+		Bukkit.getPluginManager().registerEvents(new InventoryOpen(), this);
+		Bukkit.getPluginManager().registerEvents(new PlayerFeed(), this);
+		Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
 	}
 	
 	public void onDisable(){

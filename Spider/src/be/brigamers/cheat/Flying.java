@@ -1,5 +1,6 @@
 package be.brigamers.cheat;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -29,7 +30,7 @@ public class Flying {
 	        Block b3 = p.getLocation().clone().add(0.3, -0.3, 0.3).getBlock();
 	        Block b4 = p.getLocation().clone().add(-0.3, -0.3, +0.3).getBlock();
 	        Block downBlock = p.getLocation().getBlock().getRelative(BlockFace.DOWN);
-	 
+	        
 	        if (p.getVehicle() != null) {
 	            return false;
 	        }
@@ -50,8 +51,8 @@ public class Flying {
 	            return false ;
 	        }
 	 
-	        if (e.getTo().getY() != e.getFrom().getY() || e.getTo().getX() != e.getFrom().getX() || e.getTo().getY() != e.getFrom().getY()) {
-	 
+	        if (e.getTo().getY() != e.getFrom().getY() || e.getTo().getX() != e.getFrom().getX() || e.getTo().getZ() != e.getFrom().getZ()) {
+	        	
 	            if (p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.AIR) {
 	                return false;
 	            }

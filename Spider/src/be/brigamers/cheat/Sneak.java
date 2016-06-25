@@ -13,6 +13,7 @@ public class Sneak {
 		if(!p.isSneaking()) return ;
 		if (!p.isOnGround()) return ;
 		if(p.isFlying()) return ;
+		
 		if (e.getFrom().distance(e.getTo()) + 0.2 > p.getWalkSpeed() + 0.2){
 			SpiderPlayer sp = Spider.get(p) ;
 			sp.sneak++ ;

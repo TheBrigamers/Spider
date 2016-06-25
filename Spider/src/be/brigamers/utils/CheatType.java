@@ -3,13 +3,18 @@ package be.brigamers.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import spider.SpiderPlayer;
+
 public enum CheatType {
 
 	AIMBOT("Aimbot","Aimbot"),
+	ANTICACTUS("Anti-Cactus","AntiCactus"),
 	ANTIPOTION("Anti-Potion","AntiPotion"),
 	AUTOCLICK("AutoClick","AutoClick"),
+	AUTOSTEAL("AutoSteal","AutoSteal"),
 	CHEAT("Cheat","Cheat"),
 	CRITIALS("Criticals", "Criticals"),
+	DOLPHINE("Dolphine","Dolphine"),
 	FAST_BOW("Fast-Bow","FastBow"),
 	FAST_FOOD("Fast-Food","FastFood"),
 	FAST_HEAL("Fast-Heal","FastHeal"),
@@ -23,7 +28,7 @@ public enum CheatType {
 	NO_FALL("No-Fall","NoFall"),
 	NO_WEB("No-Web","NoWeb"),
 	REGEN("Regen","Regen"),
-	NUKER("Nuker","Nuker"),
+	NUKER("Nuker/ClickBreak","Nuker"),
 	SNEAK("Sneak","Sneak"),
 	SPEEDHACK("Speed-Hack","SpeedHack"),
 	TIMER("Timer", "Timer");
@@ -32,7 +37,7 @@ public enum CheatType {
 	
 	private CheatType(String name, String permission){
 		this.name = name ;
-		this.permission = "SalviAntiCheat.ByPass." + permission ;
+		this.permission = "Spider.ByPass." + permission ;
 	}
 	
 	public String getName(){
@@ -43,8 +48,8 @@ public enum CheatType {
 		return permission ;
 	}
 	
-	public void alert(Player p){
-		String playerName = p.getName() ;
+	public void alert(SpiderPlayer sp){
+		String playerName = sp.getPlayer().getName() ;
 		String msg = "§6[§b§lSpider§6] §c" + playerName + "§6: §c" + name + "§6."  ;
 
 		for(Player pOnline : Bukkit.getOnlinePlayers()){
