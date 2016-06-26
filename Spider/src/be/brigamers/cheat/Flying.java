@@ -49,7 +49,20 @@ public class Flying {
 	        if (e.getTo().getY() < e.getFrom().getY()) {
 	            return false ;
 	        }
-	 
+	        
+	        for(int i=-2;i<0;i++){
+	        	if(p.getLocation().clone().add(0,i,0).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(1,i,1).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(1,i,0).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(1,i,-1).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(0,i,1).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(0,i,-1).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(-1,i,1).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(-1,i,0).getBlock().getType() == Material.CACTUS) return false;
+		        if(p.getLocation().clone().add(-1,i,-1).getBlock().getType() == Material.CACTUS) return false;
+	        }
+	        
+	        
 	        if (e.getTo().getY() != e.getFrom().getY() || e.getTo().getX() != e.getFrom().getX() || e.getTo().getZ() != e.getFrom().getZ()) {
 	        	
 	            if (p.getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.AIR) {
@@ -74,7 +87,21 @@ public class Flying {
 	            if (p.isFlying()) return false;
 	            
 	            if(p.hasPotionEffect(PotionEffectType.JUMP)) return false ;
-	     
+	            
+	            if(p.getLocation().getBlock().getType() == Material.CACTUS) return false;
+	       	 
+	            for(int i=-2;i<=0;i++){
+		        	if(p.getLocation().clone().add(0,i,0).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(1,i,1).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(1,i,0).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(1,i,-1).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(0,i,1).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(0,i,-1).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(-1,i,1).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(-1,i,0).getBlock().getType() == Material.CACTUS) return false;
+			        if(p.getLocation().clone().add(-1,i,-1).getBlock().getType() == Material.CACTUS) return false;
+		        }
+	            
 	            Vector vec = new Vector(e.getTo().getX(), e.getTo().getY(), e.getTo().getZ());
 	     
 	            double i = vec.distance(new Vector(e.getFrom().getX(), e.getFrom().getY(), e.getFrom().getZ()));
@@ -88,41 +115,4 @@ public class Flying {
 	    	return false ;
 	    }
 	    
-	    /*public boolean flyLent(PlayerMoveEvent e){
-	    	Player p = e.getPlayer() ;
-	    	SpiderPlayer sp = Spider.get(p) ;
-	    	if (p.getVehicle() != null) {
-	            return false;
-	        }
-	 
-	        if (p.getAllowFlight()) {
-	            return false;
-	        }
-	 
-	        if (!p.getLocation().getBlock().isEmpty()) {
-	            return false;
-	        }
-	        
-	        if(p.hasPotionEffect(PotionEffectType.JUMP)) return false ;
-	 
-	        Block b1 = p.getLocation().clone().add(0.3, -0.3, -0.3).getBlock();
-	        Block b2 = p.getLocation().clone().add(-0.3, -0.3, -0.3).getBlock();
-	        Block b3 = p.getLocation().clone().add(0.3, -0.3, 0.3).getBlock();
-	        Block b4 = p.getLocation().clone().add(-0.3, -0.3, +0.3).getBlock();
-	        Block downBlock = p.getLocation().getBlock().getRelative(BlockFace.DOWN);
-	        if (b1.getType() != Material.AIR || b2.getType() != Material.AIR || b3.getType() != Material.AIR || b4.getType() != Material.AIR || downBlock.getType().toString().contains("FENCE") || downBlock.toString().contains("WALL")) {
-	            sp.deplaceBlock = 0 ;
-	        }
-	 
-	       if (e.getTo().getY() > e.getFrom().getY()) {
-	            sp.deplaceBlock += 1 ;
-	       }
-	 
-	        if (sp.deplaceBlock > 5) {
-	            sp.deplaceBlock = 0 ;
-	            Bukkit.broadcastMessage("§4Fly(3)") ;
-	            return true ;
-	        }
-	    	return false ;
-	    }*/
 }

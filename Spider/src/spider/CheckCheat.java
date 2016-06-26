@@ -21,7 +21,7 @@ public class CheckCheat {
 					boolean isCheating = false ;
 					CheatType cheat = null;
 					
-					//Bukkit.broadcastMessage("§2" + sp.nbPacket);
+					//Bukkit.broadcastMessage("§2" + sp.spider);
 					
 					//Check
 					
@@ -48,9 +48,8 @@ public class CheckCheat {
 							cheat = CheatType.FAST_BOW ;
 						}else
 						if(sp.armAnimationPacket > 40){
-							//isCheating = true ;
+							isCheating = true ;
 							cheat = CheatType.AUTOCLICK ;
-							cheat.alert(sp);
 						}else
 						if(sp.nuker > 50){
 							isCheating = true ;
@@ -103,6 +102,10 @@ public class CheckCheat {
 						if(sp.fly > 3){
 							isCheating = true ;
 							cheat = CheatType.FLY_HIGHJUMP ;
+						}else
+						if(sp.spider > 10){
+							isCheating = true ;
+							cheat = CheatType.SPIDER ;
 						}
 						
 						if(isCheating){
@@ -148,6 +151,7 @@ public class CheckCheat {
 					sp.freecam = 0 ;
 					sp.nbPacket = 0 ;
 					sp.blink = 0 ;
+					sp.spider = 0 ;
 				}
 					
 				

@@ -3,9 +3,12 @@ package be.brigamers.cheat;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-public class Spider {
+import spider.SpiderPlayer;
+import spider.Spider;
 
-	public Spider(Player p, PlayerMoveEvent e){
+public class SpiderCheat {
+
+	public SpiderCheat(Player p, PlayerMoveEvent e){
 		if(p.isFlying()) return ;
 		if(p.getVehicle() != null) return ;
 		if(e.getTo().getY() > e.getFrom().getY()){
@@ -22,7 +25,12 @@ public class Spider {
 				&& !p.getLocation().clone().add(-1,0,1).getBlock().isLiquid()
 				&& !p.getLocation().clone().add(-1,0,0).getBlock().isLiquid()
 				&& !p.getLocation().clone().add(-1,0,-1).getBlock().isLiquid()){
-					//Bukkit.broadcastMessage("§2Spider") ;
+					if(p.getLocation().clone().add(0,-1,0).getBlock().getType().isSolid()) return ;
+					if(p.getLocation().clone().add(0,-2,0).getBlock().getType().isSolid()) return ;
+					if(p.getLocation().clone().add(0,-1,0).getBlock().isLiquid()) return ;
+					if(p.getLocation().clone().add(0,-2,0).getBlock().isLiquid()) return ;
+					SpiderPlayer sp = Spider.get(p) ;
+					sp.spider++ ;
 				}
 				
 			}

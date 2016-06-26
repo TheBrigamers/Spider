@@ -32,6 +32,7 @@ public enum CheatType {
 	REGEN("Regen","Regen"),
 	NUKER("Nuker/ClickBreak","Nuker"),
 	SNEAK("Sneak","Sneak"),
+	SPIDER("Spider","Spider"),
 	SPEEDHACK("Speed-Hack","SpeedHack"),
 	TIMER("Timer", "Timer");
 	

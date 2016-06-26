@@ -44,6 +44,7 @@ public class SpiderPlayer {
 	public int fastPlace = 0;
 	public int freecam = 0;
 	public int blink = 0;
+	public int spider = 0;
 	
 	public SpiderPlayer(Player player){
 		this.player = player ;
