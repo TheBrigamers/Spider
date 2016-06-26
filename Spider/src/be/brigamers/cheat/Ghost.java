@@ -1,17 +1,11 @@
 package be.brigamers.cheat;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class Ghost {
 
 	public Ghost(PlayerInteractEvent e){
-		List<Block> blocks = new ArrayList<Block>() ;
+		/*List<Block> blocks = new ArrayList<Block>() ;
 		blocks = e.getPlayer().getLineOfSight((Set<Material>)null, 10) ;
 		for(Block block : blocks){
 			if(block.getType().isOccluding()){
@@ -28,7 +22,7 @@ public class Ghost {
 					//Hack
 				}
 			}
-		}
+		}*/
 	}
 	
 }
