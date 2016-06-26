@@ -1,4 +1,4 @@
-package be.brigamers.punition;
+package be.brigamers.punishement;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

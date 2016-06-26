@@ -1,5 +1,10 @@
 package spider;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.bukkit.Bukkit;
 
 import be.brigamers.utils.CheatType;
@@ -13,10 +18,11 @@ public class CheckCheat {
 			public void run() {
 				
 				for(SpiderPlayer sp : Spider.getSpiderPlayer()){
-					//Bukkit.broadcastMessage("§2" + sp.nbPacket);
-					sp.nbPacket = 0 ;
 					boolean isCheating = false ;
 					CheatType cheat = null;
+					
+					//Bukkit.broadcastMessage("§2" + sp.nbPacket);
+					
 					//Check
 					
 					if(sp.join == 0){
@@ -42,8 +48,9 @@ public class CheckCheat {
 							cheat = CheatType.FAST_BOW ;
 						}else
 						if(sp.armAnimationPacket > 40){
-							isCheating = true ;
+							//isCheating = true ;
 							cheat = CheatType.AUTOCLICK ;
+							cheat.alert(sp);
 						}else
 						if(sp.nuker > 50){
 							isCheating = true ;
@@ -77,21 +84,41 @@ public class CheckCheat {
 							isCheating = true ;
 							cheat = CheatType.FAST_FOOD ;
 						}else
-						if(sp.fly > 1){
-							//isCheating = true ;
-							Bukkit.broadcastMessage("§4Cheat ?") ;
+						if(sp.fastPlace > 10){
+								isCheating = true ;
+								cheat = CheatType.FAST_PLACE ;
+						}else
+						if(sp.freecam > 0){
+								isCheating = true ;
+								cheat = CheatType.FREECAM ;
+						}else
+						if(sp.blink > 100){
+								isCheating = true ;
+								cheat = CheatType.BLINK ;
 						}else
 						if(sp.timer > 100){
-							//isCheating = true ;
-							Bukkit.broadcastMessage("§4Timer ?") ;
+								isCheating = true ;
+								cheat = CheatType.TIMER ;
+						}else
+						if(sp.fly > 3){
+							isCheating = true ;
+							cheat = CheatType.FLY_HIGHJUMP ;
 						}
 						
 						if(isCheating){
 							sp.nbCheatDetect++ ;
 							cheat.alert(sp);
+							sp.cheatDetect.add(cheat.getName()) ;
 							if(sp.nbCheatDetect >= 3){
-								sp.getPlayer().kickPlayer("§6[§b§lSpider§6] §b vous §favez été kick pour §c" + cheat.getName() + "§f.");
+								sp.getPlayer().getLocation().getWorld().strikeLightningEffect(sp.getPlayer().getLocation()) ;
+								sp.getPlayer().getLocation().getWorld().strikeLightningEffect(sp.getPlayer().getLocation()) ;
+								sp.getPlayer().getLocation().getWorld().strikeLightningEffect(sp.getPlayer().getLocation()) ;
+								
+								nbArray(sp.cheatDetect, sp) ;
+								
+								sp.getPlayer().kickPlayer("§6[§b§lSpider§6] §b vous §favez été kick pour §c" + sp.kickRaison + "§f.");
 								sp.nbCheatDetect = 0 ;
+								sp.cheatDetect.clear();
 							}
 						}
 						
@@ -117,7 +144,10 @@ public class CheckCheat {
 					sp.dolphine = 0 ;
 					sp.autoSteal = 0 ;
 					sp.fastEat = 0 ;
-					
+					sp.fastPlace = 0 ;
+					sp.freecam = 0 ;
+					sp.nbPacket = 0 ;
+					sp.blink = 0 ;
 				}
 					
 				
@@ -127,5 +157,15 @@ public class CheckCheat {
 			
 		}, 0, 20) ;
 	}
+
+	public static void nbArray(ArrayList<String> array, SpiderPlayer sp) {
+
+		Set<String> mySet = new HashSet<String>(array);
+		for(String s: mySet){
+		 sp.kickRaison += s + "[x" +Collections.frequency(array,s) + "] " ;
+		}
+
+	}
+
 	
 }

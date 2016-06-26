@@ -14,6 +14,7 @@ import be.brigamers.cheat.Jesus;
 import be.brigamers.cheat.NoWeb;
 import be.brigamers.cheat.Sneak;
 import be.brigamers.cheat.SpeedHack;
+import be.brigamers.cheat.Spider;
 
 public class PlayerMove implements Listener{
 
@@ -29,6 +30,7 @@ public class PlayerMove implements Listener{
 		new Glide(p, e) ;
 		new AntiCactus(p) ;
 		new Dolphine(p, e) ;
+		new Spider(p, e) ;
 	}
 	
 }

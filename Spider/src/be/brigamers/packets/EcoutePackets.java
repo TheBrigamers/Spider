@@ -8,6 +8,8 @@ import org.inventivetalent.packetlistener.handler.SentPacket;
 import be.brigamers.cheat.Timer;
 import net.minecraft.server.v1_8_R3.PacketPlayInArmAnimation;
 import net.minecraft.server.v1_8_R3.PacketPlayInBlockDig;
+import net.minecraft.server.v1_8_R3.PacketPlayInBlockPlace;
+import net.minecraft.server.v1_8_R3.PacketPlayInFlying;
 import net.minecraft.server.v1_8_R3.PacketPlayInFlying.PacketPlayInPosition;
 import net.minecraft.server.v1_8_R3.PacketPlayInFlying.PacketPlayInPositionLook;
 import spider.Spider;
@@ -39,6 +41,12 @@ public class EcoutePackets {
             	}
             	if(e.getPacket() instanceof PacketPlayInPosition || e.getPacket() instanceof PacketPlayInPositionLook){
             		new Timer(e.getPlayer()) ;
+            	}
+            	if(e.getPacket() instanceof PacketPlayInBlockPlace){
+            		sp.fastPlace++ ;
+            	}
+            	if(e.getPacket() instanceof PacketPlayInFlying){
+            		sp.blink++ ;
             	}
             	/*
             	if(e.getPacket() instanceof PacketPlayInFlying){

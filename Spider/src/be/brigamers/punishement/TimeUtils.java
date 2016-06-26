@@ -1,4 +1,4 @@
-package be.brigamers.punition;
+package be.brigamers.punishement;
 
 import java.util.Arrays;
 import java.util.List;

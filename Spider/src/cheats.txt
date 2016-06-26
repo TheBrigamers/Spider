@@ -22,7 +22,7 @@ Joueur :
 	FastBreak : Permet de casser plus vite les block
 	D FastEat: Permet de manger plus vite
 	FastPlace : Permet de poser de blocks plus vite
-	Freecam : Permet de ce déplacer invincible, en fly et en gm3 dans la limite des chunk chargé
+	D Freecam : Permet de ce déplacer invincible dans la limite des chunk chargé
 	Ghost : Permet de casser des block a travers le mur
 	invWalk : Permet d'ouvrir son inventaire en marchant
 	MoreInventory : Empeche le drop des item dans les slots de craf

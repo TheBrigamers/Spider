@@ -1,6 +1,5 @@
 package be.brigamers.cheat;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -16,14 +15,14 @@ import spider.SpiderPlayer;
 public class Flying {
 
 	public Flying(Player p, PlayerMoveEvent e){
-		if(flySol(e) || flyAir(e) || flyLent(e)){
+		if(MoveChecker(e) || VerticalMoveChecker(e)){
 			SpiderPlayer sp = Spider.get(p) ;
 			 sp.fly++ ;
 		}
 		
 	    }
 	    
-	    public boolean flySol(PlayerMoveEvent e){
+	    public boolean MoveChecker(PlayerMoveEvent e){
 	    	Player p = e.getPlayer() ;
 	    	Block b1 = p.getLocation().clone().add(0.3, -0.3, -0.3).getBlock();
 	        Block b2 = p.getLocation().clone().add(-0.3, -0.3, -0.3).getBlock();
@@ -66,7 +65,7 @@ public class Flying {
 	        return false ;
 		}
 	    
-	    public boolean flyAir(PlayerMoveEvent e){
+	    public boolean VerticalMoveChecker(PlayerMoveEvent e){
 	     
 	            Player p = e.getPlayer();
 	     
@@ -89,7 +88,7 @@ public class Flying {
 	    	return false ;
 	    }
 	    
-	    public boolean flyLent(PlayerMoveEvent e){
+	    /*public boolean flyLent(PlayerMoveEvent e){
 	    	Player p = e.getPlayer() ;
 	    	SpiderPlayer sp = Spider.get(p) ;
 	    	if (p.getVehicle() != null) {
@@ -121,8 +120,9 @@ public class Flying {
 	 
 	        if (sp.deplaceBlock > 5) {
 	            sp.deplaceBlock = 0 ;
+	            Bukkit.broadcastMessage("§4Fly(3)") ;
 	            return true ;
 	        }
 	    	return false ;
-	    }
+	    }*/
 }

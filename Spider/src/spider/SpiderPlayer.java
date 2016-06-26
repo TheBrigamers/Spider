@@ -1,5 +1,7 @@
 package spider;
 
+import java.util.ArrayList;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,7 +17,9 @@ public class SpiderPlayer {
 	public int prendDegats = 0;
 	public int feedNbItemInHand = 0 ;
 	public Material feedLastMaterialInHand = null ;
+	public String kickRaison = "";
 	
+	ArrayList<String> cheatDetect = new ArrayList<String>() ;
 	public int nbCheatDetect = 0 ;
 	public int armAnimationPacket = 0 ;
 	public int NaturalRegen = 0 ;
@@ -36,7 +40,10 @@ public class SpiderPlayer {
 	public int dolphine = 0;
 	public int autoSteal = 0;
 	public int fastEat = 0;
-	public int join;
+	public int join = 0;
+	public int fastPlace = 0;
+	public int freecam = 0;
+	public int blink = 0;
 	
 	public SpiderPlayer(Player player){
 		this.player = player ;

@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffectType;
 
-public class Fonction {
+public class Function {
 
 	public boolean isFlying(Player p){
 		

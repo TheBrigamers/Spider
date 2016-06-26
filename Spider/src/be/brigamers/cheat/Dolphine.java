@@ -24,7 +24,6 @@ public class Dolphine {
 				for(int j=rayon;j>rayon*-1;j--){
 					if(p.getLocation().add(i,0,j).getBlock().getType() != Material.WATER
 					&& p.getLocation().add(i,0,j).getBlock().getType() != Material.STATIONARY_WATER){
-						p.sendMessage("Sauf");
 						return ;
 					}
 				}
