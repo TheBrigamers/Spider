@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import be.brigamers.cheat.Criticals;
+import be.brigamers.cheat.forcefield.Forcefield;
 
 public class EntityDamageByEntity implements Listener {
 	
@@ -14,6 +15,7 @@ public class EntityDamageByEntity implements Listener {
         if (e.getDamager() instanceof Player) {
         	final Player p = (Player) e.getDamager();
             new Criticals(p) ;
+            new Forcefield(p);
         }
     }
 	

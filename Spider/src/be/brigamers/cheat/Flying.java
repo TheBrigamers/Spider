@@ -17,7 +17,7 @@ public class Flying {
 	public Flying(Player p, PlayerMoveEvent e){
 		if(MoveChecker(e) || VerticalMoveChecker(e)){
 			SpiderPlayer sp = Spider.get(p) ;
-			 sp.fly++ ;
+			sp.fly++ ;
 		}
 		
 	    }

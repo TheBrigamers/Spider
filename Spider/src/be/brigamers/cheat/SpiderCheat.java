@@ -1,5 +1,6 @@
 package be.brigamers.cheat;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 
@@ -29,6 +30,7 @@ public class SpiderCheat {
 					if(p.getLocation().clone().add(0,-2,0).getBlock().getType().isSolid()) return ;
 					if(p.getLocation().clone().add(0,-1,0).getBlock().isLiquid()) return ;
 					if(p.getLocation().clone().add(0,-2,0).getBlock().isLiquid()) return ;
+					if(p.getLocation().clone().getBlock().getType() == Material.LADDER) return ;
 					SpiderPlayer sp = Spider.get(p) ;
 					sp.spider++ ;
 				}

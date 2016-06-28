@@ -21,7 +21,7 @@ public class CheckCheat {
 					boolean isCheating = false ;
 					CheatType cheat = null;
 					
-					//Bukkit.broadcastMessage("§2" + sp.spider);
+					//sp.getPlayer().sendMessage("§2" + sp.forcefield);
 					
 					//Check
 					
@@ -43,7 +43,7 @@ public class CheckCheat {
 							isCheating = true ;
 							cheat = CheatType.REGEN ;
 						}else
-						if(sp.projectile > 3){
+						if(sp.projectile > 7){
 							isCheating = true ;
 							cheat = CheatType.FAST_BOW ;
 						}else
@@ -106,6 +106,10 @@ public class CheckCheat {
 						if(sp.spider > 10){
 							isCheating = true ;
 							cheat = CheatType.SPIDER ;
+						}else
+						if(sp.forcefield > 15){
+							isCheating = true ;
+							cheat = CheatType.FORCEFIELD ;
 						}
 						
 						if(isCheating){
@@ -120,6 +124,7 @@ public class CheckCheat {
 								nbArray(sp.cheatDetect, sp) ;
 								
 								sp.getPlayer().kickPlayer("§6[§b§lSpider§6] §b vous §favez été kick pour §c" + sp.kickRaison + "§f.");
+								Bukkit.broadcastMessage("§6[§b§lSpider§6] §b " + sp.getPlayer().getName() + " §fa été kick pour §c" + sp.kickRaison + "§f.") ;
 								sp.nbCheatDetect = 0 ;
 								sp.cheatDetect.clear();
 							}
@@ -152,6 +157,9 @@ public class CheckCheat {
 					sp.nbPacket = 0 ;
 					sp.blink = 0 ;
 					sp.spider = 0 ;
+					sp.moveAir = 0 ;
+					sp.moveWater = 0 ;
+					sp.forcefield = 0 ;
 				}
 					
 				

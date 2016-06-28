@@ -8,6 +8,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import be.brigamers.cheat.NoFall;
+import be.brigamers.cheat.forcefield.ReceivePacket;
 import be.brigamers.events.BlockBreak;
 import be.brigamers.events.EntityDamageByBlock;
 import be.brigamers.events.EntityDamageByEntity;
@@ -38,6 +39,7 @@ public class Spider extends JavaPlugin{
 		new CheckCheat(this) ;
 		new sendAllPackets(this);
 		new Timer() ;
+		new ReceivePacket() ;
 		getCommand("ban").setExecutor(new BanCommand());
 		getCommand("kick").setExecutor(new kickCommand());
 		getCommand("mute").setExecutor(new muteCommand());

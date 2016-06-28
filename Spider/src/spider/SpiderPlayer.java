@@ -6,6 +6,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
+import net.minecraft.server.v1_8_R3.EntityPlayer;
+
 public class SpiderPlayer {
 	
 	private Player player ;
@@ -18,6 +20,10 @@ public class SpiderPlayer {
 	public int feedNbItemInHand = 0 ;
 	public Material feedLastMaterialInHand = null ;
 	public String kickRaison = "";
+	public int moveAir = 0 ;
+	public int moveWater = 0 ;
+	public int timeWater = 0 ;
+	public EntityPlayer npc = null ;
 	
 	ArrayList<String> cheatDetect = new ArrayList<String>() ;
 	public int nbCheatDetect = 0 ;
@@ -45,6 +51,7 @@ public class SpiderPlayer {
 	public int freecam = 0;
 	public int blink = 0;
 	public int spider = 0;
+	public int forcefield = 0;
 	
 	public SpiderPlayer(Player player){
 		this.player = player ;
